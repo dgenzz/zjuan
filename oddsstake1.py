@@ -21,7 +21,7 @@ driver = uc.Chrome(options=options)
 
 # === NAVIGATE & CAPTCHA ===
 driver.get("https://stake.com/sports/baseball")
-WebDriverWait(driver, 60).until(
+WebDriverWait(driver, 180).until(
     EC.presence_of_element_located((By.CSS_SELECTOR, "div.outcome-content"))
 )
 print("✅ Stake page loaded — writing to stake_data.json every 10s\n")
