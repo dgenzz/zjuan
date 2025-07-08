@@ -13,6 +13,12 @@ POLL_INTERVAL = 10.0  # seconds
 # ——— SETUP WEBDRIVER ———
 options = Options()
 options.add_experimental_option("detach", True)   # keep Chrome open after script ends
+
+
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument(f"--user-data-dir=/tmp/chrome_profile_{time.time()}")
 driver = webdriver.Chrome(options=options)
 
 # ——— NAVIGATE ONCE ———
